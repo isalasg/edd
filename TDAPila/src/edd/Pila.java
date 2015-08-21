@@ -27,6 +27,7 @@ public class Pila {
             this.Inicio = mNodo;
         } else {
             this.Fin.setSiguiente(mNodo);
+            mNodo.setAnterior(this.Fin);
         }
         this.Fin = mNodo;
     }
@@ -35,10 +36,10 @@ public class Pila {
         int Numero = -1;
         Nodo mNodo;
         
-        if (this.Inicio != null) {
-            mNodo = this.Inicio;
+        if (this.Fin != null) {
+            mNodo = this.Fin;
             Numero = mNodo.getDato();
-            this.Inicio = this.Inicio.getSiguiente();
+            this.Fin = this.Fin.getAnterior();
         }
         
         return Numero;
