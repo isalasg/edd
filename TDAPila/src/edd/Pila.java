@@ -40,6 +40,7 @@ public class Pila {
             mNodo = this.Fin;
             Numero = mNodo.getDato();
             this.Fin = this.Fin.getAnterior();
+            this.Fin.setSiguiente(null);
         }
         
         return Numero;
