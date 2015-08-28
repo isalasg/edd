@@ -39,8 +39,13 @@ public class Pila {
         if (this.Fin != null) {
             mNodo = this.Fin;
             Numero = mNodo.getDato();
-            this.Fin = this.Fin.getAnterior();
-            this.Fin.setSiguiente(null);
+            if (this.Inicio != this.Fin) {
+                this.Fin = this.Fin.getAnterior();
+                this.Fin.setSiguiente(null);
+            } else {
+                this.Fin = null;
+                this.Inicio = null;
+            }
         }
         
         return Numero;
