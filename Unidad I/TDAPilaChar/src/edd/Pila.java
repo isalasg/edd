@@ -32,13 +32,13 @@ public class Pila {
         this.Fin = mNodo;
     }
     
-    public int Pop() {
-        int Numero = -1;
+    public char Pop() {
+        char Letra = '@';
         Nodo mNodo;
         
         if (this.Fin != null) {
             mNodo = this.Fin;
-            Numero = mNodo.getDato();
+            Letra = mNodo.getDato();
             if (this.Inicio != this.Fin) {
                 this.Fin = this.Fin.getAnterior();
                 this.Fin.setSiguiente(null);
@@ -48,6 +48,6 @@ public class Pila {
             }
         }
         
-        return Numero;
+        return Letra;
     }
 }
