@@ -24,10 +24,10 @@ public class Main {
         if (mLista.modificar(8,6)) {
             System.out.println("Modificado");
         } else {
-            System.out.println("No se puede eliminar");
+            System.out.println("No se puede modificar");
         }
-        if (mLista.modificar(10,9)) {
-            System.out.println("Modificado");
+        if (mLista.eliminar(10)) {
+            System.out.println("Eliminado");
         } else {
             System.out.println("No se puede eliminar");
         }
