@@ -36,6 +36,10 @@ public class Interfaz {
             JOptionPane.showInputDialog("Dame número:"));
     }
     
+    public void pedirNumero(String cad) {
+        this.Numero = Integer.parseInt(
+            JOptionPane.showInputDialog(cad));
+    }
     public int getNumero() {
         return Numero;
     }
@@ -51,8 +55,13 @@ public class Interfaz {
         mNodo = mLista.getInicio();
         while (mNodo != null) {
             cad = cad + mNodo.getDato() + "\n";
+            mNodo = mNodo.getSiguiente();
         }
         
+        JOptionPane.showMessageDialog(null, cad);
+    }
+    
+    public void imprimirCadena(String cad) {
         JOptionPane.showMessageDialog(null, cad);
     }
 }
