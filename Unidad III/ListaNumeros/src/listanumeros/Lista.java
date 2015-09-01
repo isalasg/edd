@@ -29,4 +29,42 @@ public class Lista {
         }
         this.Fin = mNodo;
     }
+    
+    public Nodo getInicio() {
+        return this.Inicio;
+    }
+    
+    public boolean eliminar(int numero) {
+        boolean borrado = false;
+        Nodo mNodo;
+        Nodo antNodo;
+        
+        // Buscando el nodo con el número
+        mNodo = this.Inicio;
+        while ((mNodo != null) && (mNodo.getDato() != numero)) {
+            mNodo = mNodo.getSiguiente();
+        }
+        
+        if (mNodo != null) {
+            if (mNodo == this.Inicio) {
+                this.Inicio = this.Inicio.getSiguiente();
+            } else if (mNodo == this.Fin) {
+                // Llegar al anterior al fin
+                antNodo = this.Inicio;
+                while (antNodo.getSiguiente() != mNodo) {
+                    antNodo = antNodo.getSiguiente();
+                }
+                this.Fin = antNodo;
+            } else {
+                // Llengar al anterior al buscado
+                antNodo = this.Inicio;
+                while (antNodo.getSiguiente() != mNodo) {
+                    antNodo = antNodo.getSiguiente();
+                }
+                antNodo.setSiguiente(mNodo.getSiguiente());
+            }
+        }
+        
+        return borrado;
+    }    
 }
