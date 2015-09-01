@@ -55,6 +55,7 @@ public class Lista {
                     antNodo = antNodo.getSiguiente();
                 }
                 this.Fin = antNodo;
+                this.Fin.setSiguiente(null);
             } else {
                 // Llengar al anterior al buscado
                 antNodo = this.Inicio;
@@ -63,8 +64,27 @@ public class Lista {
                 }
                 antNodo.setSiguiente(mNodo.getSiguiente());
             }
+            borrado = true;
         }
         
         return borrado;
+    }    
+
+    public boolean modificar(int numeroanterior, int numeronuevo) {
+        boolean modificado = false;
+        Nodo mNodo;
+        
+        // Buscando el nodo con el número
+        mNodo = this.Inicio;
+        while ((mNodo != null) && (mNodo.getDato() != numeroanterior)) {
+            mNodo = mNodo.getSiguiente();
+        }
+        
+        if (mNodo != null) {
+            mNodo.setDato(numeronuevo);
+            modificado = true;
+        }
+        
+        return modificado;
     }    
 }
