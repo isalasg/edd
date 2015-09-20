@@ -87,4 +87,33 @@ public class Lista {
         
         return modificado;
     }    
+    
+    public int contar() {
+        Nodo mNodo = Inicio;
+        int contador = 0;
+        
+        while (mNodo != null) {
+            mNodo = mNodo.getSiguiente();
+            contador++;
+        }
+        return contador;
+    }
+    
+    public int buscar(int numero) {
+        Nodo mNodo;
+        int posicion = 0;
+        
+        // Buscando el nodo con el número
+        if (this.Inicio != null) {
+            mNodo = this.Inicio;
+            while ((mNodo != null) && (mNodo.getDato() != numero)) {
+                mNodo = mNodo.getSiguiente();
+                posicion++;
+            }
+        } else {
+            posicion = -1;
+        }
+        
+        return posicion;
+    }
 }
