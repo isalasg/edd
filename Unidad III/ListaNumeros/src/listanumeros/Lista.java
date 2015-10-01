@@ -7,7 +7,7 @@ package listanumeros;
 
 /**
  *
- * @author isala
+ * @author Manuel Ignacio Salas Guzmán
  */
 public class Lista {
     private Nodo Inicio;

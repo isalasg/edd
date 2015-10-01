@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author isala
+ * @author Manuel Ignacio Salas Guzmán
  */
 public class Interfaz {
     private int Numero;
